@@ -44,7 +44,7 @@ const updateTodo = async (req, res) => {
 const deleteTodo = async (req, res) => {
   const { id: _id } = req.params;
   try {
-    const deletedTodo = await Post.findByIdAndRemove(_id);
+    const deletedTodo = await Todo.findByIdAndRemove(_id);
     res.status(200).json(deletedTodo);
   } catch (error) {
     res.status(409).json({ message: error.message })
