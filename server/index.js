@@ -6,11 +6,10 @@ import todosRouter from './routes/todos.js'
 
 const app = express()
 
+app.use(cors())
 app.use('/todos', todosRouter)
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
-
-app.use(cors())
 
 const PORT = process.env.PORT || 5000
 
