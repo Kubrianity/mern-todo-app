@@ -1,6 +1,7 @@
 import React from 'react'
 import { useEffect } from 'react'
 import { useSelector, useDispatch } from "react-redux"
+import { Link } from 'react-router-dom'
 import { fetchTodos } from '../../features/todos/todoSlice'
 import Todo from './Todo/Todo'
 
@@ -20,6 +21,9 @@ const Todos = () =>  {
       {todos.map((todo) => (
         <Todo todo = {todo} key = {todo._id} />
       ))}
+      <span>
+        <Link to = '/new'> Create a new todo </Link>
+      </span>
     </div>
   )
 }
