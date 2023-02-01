@@ -1,7 +1,7 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { useState } from 'react'
 import { useDispatch } from 'react-redux'
-import { updateTodo } from '../../features/todos/todoSlice'
+import { fetchTodo, updateTodo } from '../../features/todos/todoSlice'
 import { useParams } from 'react-router-dom'
 
 const TodoEditForm = () =>  {
@@ -24,11 +24,18 @@ const TodoEditForm = () =>  {
       [e.target.name]: e.target.value
     })
   }
-
+  useEffect(() => {
+    const fetchTodoData = () => {
+      dispatch(fetchTodo(id)).then((data) => {
+      setTodo(data.payload)
+    })
+    }
+    fetchTodoData()
+  }, [id, dispatch])
   return (
     <div>
       <form onSubmit = {handleEdit}>
-        <input type = "textarea" name = "text"  onChange = {handleChange}/>
+        <input type = "textarea" name = "text"  value = {todo.text} onChange = {handleChange}/>
         <button type = "submit"> Edit </button>
       </form> 
     </div>
