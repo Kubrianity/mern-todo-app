@@ -15,6 +15,15 @@ export const fetchTodos = createAsyncThunk("todos/fetchTodos", async () => {
   }
 })
 
+export const fetchTodo = createAsyncThunk("todos/fetchTodo", async (id) => {
+  try {
+    const response = await api.fetchSingleTodo(id);
+    return response.data;
+  } catch (error) {
+    return error.response.data.message;
+  }
+})
+
 export const createTodo = createAsyncThunk(
   "todos/createTodo",
   async (todo, { rejectWithValue }) => {
@@ -70,6 +79,27 @@ const todoSlice = createSlice({
       }
     },
     [fetchTodos.rejected]: (state) => {
+      return {
+        ...state,
+        responseStatus: "rejected"
+      }
+    },
+    [fetchTodo.pending]: (state) => {
+      return {
+        ...state,
+        responseStatus: "pending"
+      }
+    },
+    [fetchTodo.fulfilled]: (state, action) => {
+      return {
+        ...state,
+        todos: state.todos.map((todo) =>
+        todo._id === action.payload._id ? action.payload : todo
+      ),
+        responseStatus: "success"
+      }
+    },
+    [fetchTodo.rejected]: (state) => {
       return {
         ...state,
         responseStatus: "rejected"
