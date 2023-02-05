@@ -12,7 +12,7 @@ const Todo = ({ todo }) =>  {
     dispatch(deleteTodo(todo._id))
   }
   const handleEdit = (id) => {
-    navigate(`/todos/${id}`)
+    navigate(`/${id}`)
   }
 
   return (
