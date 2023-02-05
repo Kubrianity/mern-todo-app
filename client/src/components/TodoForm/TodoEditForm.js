@@ -2,8 +2,7 @@ import React, { useEffect } from 'react'
 import { useState } from 'react'
 import { useDispatch } from 'react-redux'
 import { fetchTodo, updateTodo } from '../../features/todos/todoSlice'
-import { useParams } from 'react-router-dom'
-import { useNavigate } from 'react-router-dom'
+import { useParams, useNavigate, Link } from 'react-router-dom'
 
 const TodoEditForm = () =>  {
   const [todo, setTodo] = useState({
@@ -41,6 +40,7 @@ const TodoEditForm = () =>  {
         <input type = "textarea" name = "text"  value = {todo.text} onChange = {handleChange}/>
         <button type = "submit"> Edit </button>
       </form> 
+      <Link to = '/'> Cancel </Link>
     </div>
   )
 }
