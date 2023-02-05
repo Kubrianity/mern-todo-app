@@ -9,10 +9,10 @@ const App = () =>  {
   return (
     <div>
       <Routes>
-        <Route path = '/todos/:id' element = {<TodoEditForm />} />
+        <Route path = '/' element = {<Todos />} />
+        <Route path = '/:id' element = {<TodoEditForm />} />
         <Route path = '/new' element = {<TodoForm />} />
       </Routes>
-      <Todos />
     </div>
   )
 }
