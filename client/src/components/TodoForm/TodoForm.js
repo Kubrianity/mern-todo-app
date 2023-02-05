@@ -12,6 +12,7 @@ const TodoForm = () =>  {
   const handleSubmit = async(e) => {
     e.preventDefault()
     dispatch(createTodo(todo))
+    e.target.reset()
   }
   const handleChange = (e) => {
     setTodo({
@@ -23,7 +24,7 @@ const TodoForm = () =>  {
     <div>
       <form onSubmit = {handleSubmit}>
         <input type="textarea" name="text" onChange = {handleChange}/>
-        <input type="submit" value="Submit" />
+        <input type="submit" value="Add" />
       </form>
     </div>
   )
