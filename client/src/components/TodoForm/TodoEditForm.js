@@ -3,6 +3,7 @@ import { useState } from 'react'
 import { useDispatch } from 'react-redux'
 import { fetchTodo, updateTodo } from '../../features/todos/todoSlice'
 import { useParams } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 
 const TodoEditForm = () =>  {
   const [todo, setTodo] = useState({
@@ -11,12 +12,14 @@ const TodoEditForm = () =>  {
 
   const dispatch = useDispatch()
   const { id } = useParams()
-  
+  const navigate = useNavigate()
+
   const handleEdit = (e) => {
     e.preventDefault()
     dispatch(
       updateTodo({id, todo})
     )
+    navigate('/')
   }
   const handleChange = (e) => {
     setTodo({
