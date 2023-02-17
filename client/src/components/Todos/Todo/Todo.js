@@ -2,6 +2,7 @@ import React from 'react'
 import { useDispatch } from 'react-redux'
 import { deleteTodo } from '../../../features/todos/todoSlice'
 import { useNavigate } from 'react-router-dom'
+import './Todo.css'
 
 const Todo = ({ todo }) =>  {
   const dispatch = useDispatch()
@@ -16,11 +17,12 @@ const Todo = ({ todo }) =>  {
   }
 
   return (
-    <div>
-      <p>{ todo.text }</p>
-      <button type="submit" onClick = {handleClick}>Delete</button>
-      <button type="button" onClick = {() => handleEdit(todo._id)}>Edit</button>
-    </div>
+    <section className = 'container'>
+      <li className = 'list-group-item d-flex justify-content-around'> { todo.text }
+        <button className = 'btn btn-warning' type = 'button' onClick = {() => handleEdit(todo._id)}>Edit</button>
+        <button className = 'btn btn-danger' type = 'submit' onClick = {handleClick}>Delete</button>
+      </li>
+    </section>
   )
 }
 
