@@ -25,7 +25,7 @@ const Todos = () =>  {
       ))}
       </ul>
       <span>
-        <Link to = '/new'> Create a new todo </Link>
+        <Link className = 'text-info text-decoration-none'to = '/new'> Create a new todo </Link>
       </span>
     </main>
   )
