@@ -11,5 +11,16 @@ Mern stack application to enable users handle their tasks easily
 ## Installation & Setup
 
 Clone this repository <br>
-*git clone https://github.com/Kubrianity/mern-todo-app.git* <br>
-Change the directory and install dependencies <br>
+*git clone https://github.com/Kubrianity/mern-todo-app.git* <br><br>
+Change the directory for server side <br>
+*cd server* <br>
+Install dependencies <br>
+*npm install* <br>
+Run the server <br>
+*node index.js | nodemon index.js* <br><br>
+Change the directory for client side <br>
+*cd client* <br>
+Install dependencies <br>
+*npm install* <br>
+Start to view it in your localhost <br>
+*npm start* <br>
