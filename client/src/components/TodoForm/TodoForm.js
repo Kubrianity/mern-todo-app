@@ -24,10 +24,11 @@ const TodoForm = () =>  {
     })
   }
   return (
-    <div>
-      <form onSubmit = {handleSubmit}>
-        <input type="textarea" name="text" onChange = {handleChange}/>
-        <input type="submit" value="Add" />
+    <div className = "container mt-5 pt-5 text-center">
+      <h2> Write your task here </h2>
+      <form onSubmit = {handleSubmit} className = "form-group">
+        <input type="textarea" name="text" onChange = {handleChange} className = "form-control my-4"/>
+        <input type="submit" value="Add" className = "btn btn-primary"/>
       </form>
     </div>
   )
