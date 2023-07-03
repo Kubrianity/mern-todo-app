@@ -17,15 +17,15 @@ const Todos = () =>  {
   }, [dispatch])
 
   return (
-    <main className = 'todo-container'>
-      <h1>Todo List</h1>
+    <main className = 'todo-container mt-5'>
+      <h1 className= 'text-muted'> My todo tracker </h1>
       <ul className = 'list-group'>
       {todos.map((todo) => (
         <Todo todo = {todo} key = {todo._id} />
       ))}
       </ul>
       <span>
-        <Link className = 'text-info text-decoration-none'to = '/new'> Create a new todo </Link>
+        <Link className = 'text-info text-decoration-none font-weight-bold' to = '/new'> Create a new todo </Link>
       </span>
     </main>
   )

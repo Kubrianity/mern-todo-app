@@ -17,10 +17,10 @@ const Todo = ({ todo }) =>  {
   }
 
   return (
-    <section className = 'container'>
-      <li className = 'list-group-item d-flex justify-content-around'> { todo.text }
-        <button className = 'btn btn-warning btn-sm' type = 'button' onClick = {() => handleEdit(todo._id)}>Edit</button>
-        <button className = 'btn btn-danger btn-sm' type = 'submit' onClick = {handleClick}>Delete</button>
+    <section className = 'container mb-5'>
+      <li className = 'list-group-item d-flex justify-content-around bg-light'> { todo.text }
+        <button className = 'btn btn-warning btn-sm' type = 'button' onClick = {() => handleEdit(todo._id)} > Edit </button>
+        <button className = 'btn btn-danger btn-sm' type = 'submit' onClick = {handleClick} > Delete </button>
       </li>
     </section>
   )
